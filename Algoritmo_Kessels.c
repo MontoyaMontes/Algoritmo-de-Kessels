@@ -84,7 +84,7 @@ int main(int argc, char** argv){
 			}//fin while
 
 			//indica que la siguiente seccion se realiza con acceso exclusivo
-			printf("Entró el hilo con id %i \n", omp_get_thread_num());
+			printf("Entró el hilo con id %i \n", i);
 		
 			//Sección donde hace una suma, basicamente hacer tiempo.
 			sumaHilo = 0;
@@ -94,6 +94,8 @@ int main(int argc, char** argv){
 	 			sumaHilo+=i;
 	 		}//fin for
 
+	 		printf("Suma = %i\n", sumaHilo);//Linea para evitar que el compilador haga cosas feas.
+			
 			printf("Salió el hilo con id %i \n", omp_get_thread_num());
 			
 			//Código de salida
